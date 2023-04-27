@@ -1,0 +1,44 @@
+# macOS
+.DS_Store
+
+# Windows
+.thumbs.db
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Quasar core related directories
+/dist
+
+# Cordova related directories and files
+/src-cordova/node_modules
+/src-cordova/platforms
+/src-cordova/plugins
+/src-cordova/www
+
+# Capacitor related directories and files
+/src-capacitor/www
+/src-capacitor/node_modules
+
+# BEX related directories and files
+/src-bex/www
+/src-bex/js/core
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Configuration files
+.eslintrc.js
+.npmrc
+postcssrc.js
+babel.config.js
+jsconfig.json
+.eslintignore
+.editorconfig
+node_modules
