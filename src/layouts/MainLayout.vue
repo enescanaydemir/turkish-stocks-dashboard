@@ -1,48 +1,20 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <div class="q-pa q-qutter-y-sm">
+    <div class="bg-grey text-white">
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn flat round dense icon="menu" clsas="q-mr-sm" />
+        <q-space />
+        <q-btn flat round dense icon="search" class="q-mr-xs" />
       </q-toolbar>
-    </q-header>
+      <q-toolbar inset>
+        <q-toolbar-title><strong>Türk</strong> Hisse Senedi Piyasası</q-toolbar-title>
+      </q-toolbar>
+    </div>
+  </div>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
-
-    <q-page-container>
-      <router-view />
-    </q-page-container>
-  </q-layout>
+  <div class="q-pa-md">
+    <q-table flat bordered title="Borsalar" :rows="rows" :columns="columns" row-key="name" dark color="amber" />
+  </div>
 </template>
 
 <script>
@@ -98,16 +70,15 @@ export default defineComponent({
   name: 'MainLayout',
 
   components: {
-    EssentialLink
   },
 
-  setup () {
+  setup() {
     const leftDrawerOpen = ref(false)
 
     return {
       essentialLinks: linksList,
       leftDrawerOpen,
-      toggleLeftDrawer () {
+      toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value
       }
     }
